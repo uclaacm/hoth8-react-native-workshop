@@ -17,15 +17,15 @@ Although this workshop is intended for complete beginners, the time sensitive na
 We have another workshop available for HTML, CSS, and Javascript, so unless you're really pressed for time, I recommend you watch that first!
 
 ## Contents
-1. [How Do I Get the Most Out of This Workshop?](#How-Do-I-Get-the-Most-Out-of-This-Workshop)
-2. [Environment Set Up](#environment-set-up)
-3. [JSX](#JSX)
-4. [Basic & Third Party Components](#Basic--Third-Party-Components)
-5. [Props](#props)
-6. [Style Sheets](#style-sheets)
-7. [Custom Components](#custom-components)
-8. [State](#state)
-9. [Wrap Up](#wrap-up)
+1. [How Do I Get the Most Out of This Workshop? (01:03)](#How-Do-I-Get-the-Most-Out-of-This-Workshop)
+2. [Environment Set Up (02:35)](#environment-set-up)
+3. [JSX (03:16)](#JSX)
+4. [Basic & Third Party Components (08:19)](#Basic--Third-Party-Components)
+5. [Props (19:05)](#props)
+6. [Style Sheets (22:55)](#style-sheets)
+7. [Custom Components (28:27)](#custom-components)
+8. [State (42:06)](#state)
+9. [Wrap Up (52: 13)](#wrap-up)
 10. [Additional Resources](#additional-resources)
 
 ## How Do I Get the Most Out of This Workshop?
@@ -405,3 +405,4 @@ Unfortunately, that's all I have time for! I've linked a few additional topics (
 7. [React Navigation](https://reactnavigation.org/docs/getting-started/)
 8. [Thinking in React (Class Components)](https://reactjs.org/docs/thinking-in-react.html)
 9. [Thinking in React (Functional Components)](https://dev.to/lukeshiru/thinking-in-react-the-2020-version-4c18)
+10. [Async/Await](https://www.valentinog.com/blog/await-react/)
