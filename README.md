@@ -279,7 +279,7 @@ const CaptionedImage = props => {
 Now we can pass two props to our component: a `uri` and a `caption` (Side note: notice how I created a style object directly within the style prop; this is allowed! It's preferred to use StyleSheet for performance reasons, but for for the sake of demonstration I'll stick with this way). Just like we can include any other component, we can render our `CaptionedImage` by doing the following: 
 
 ```javascript
-<CaptionedImage uri={some-image-uri} text="A caption that describes the image!"/>
+<CaptionedImage uri={some-image-uri} caption="A caption that describes the image!"/>
 ```
 
 Let's do another example.
