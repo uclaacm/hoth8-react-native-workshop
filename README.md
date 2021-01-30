@@ -1,5 +1,5 @@
 # HOTH 8 React Native Workshop 📱
-So you want to make a mobile app, but don't want to go through the hassle of maintaining 2 separate code bases? Then, you've come to the right place! React Native, a framework released by Facebook, allows you to do exactly that using Javascript. Let's get started!
+So you want to make a mobile app, but don't want to go through the hassle of maintaining 2 separate code bases? Then you've come to the right place! React Native, a framework released by Facebook, allows you to do exactly that using Javascript. Let's get started!
 
 //TODO: link slides <br>
 //TODO: link video
@@ -320,7 +320,7 @@ const styles = StyleSheet.create({
 ```
 I want to emphasize `export default StyledButton`. Without it, you would not be able to import the custom component into another file!
 
-To import `<StyledButton>` into `App.js` we update it as follows:
+To import `<StyledButton>` into `App.js`, we update it as follows:
 
 ```
 import React from 'react';
@@ -343,17 +343,62 @@ export default function App() {
   );
 }
 ```
-Now our app is looking good 😎😎. Obviously, this is a very simple example for the sake of demonstration, but React Native is extremely powerful. Using a combination of many simple components, you can buid a far more involved UI (think Twitter) fairly intuitively.
+Now our app is looking good 😎😎. Obviously, this is a very simple example for the sake of demonstration, but React Native is extremely powerful. Using a combination of many simple components, you can build a far more involved UI (think Twitter) fairly intuitively.
 
 Now all we need to do is make our counter actually function and we'll be good to go!
 
 ## State
 
-## Thinking In React (Native)
+### Demo
+Let's just jump right into the demo and make it so that when we click our button, the counter text increments! Here's one attempt:
+
+```
+export default function App() {
+  let count = 0;
+
+  const incrementCount = () => {
+    count++;
+  }
+
+  return (
+    <View style={styles.container}>
+      <Text style={styles.header}>Component Counter</Text>
+      <Text style={styles.counter}>{count}</Text>
+      <StyledButton
+        text="Increment"
+        onPress={incrementCount}/>
+    </View>
+  );
+}
+```
+
+Unfortunately, this isn't going to work as expected. When we click on our increment button, nothing happens. 
+
+To understand what's going on you need to know a little bit more about how react renders each component. In React Native, each component undergoes a component life cycle. This life cycle consists of a couple things but most relevant to us now is when a component is updated. Right now, in our app we're passing a variable `count`. The count text component will reflect the value of count when it is initially drawn, as you can see if you set count to be initialized as some value other than 0.
+
+The problem comes from the fact that React Native components are only rerendered when their **state** changes. If local variables, such as `count` change, React Native won't know to update the affected component and you won't be able to see anything happen in your app. Let's fix this.
+
+```
+const [count, setCount] = useState(0); // state hook must be imported from react
+
+const incrementCount = () => {
+  setCount(prevCount => ++prevCount);
+}
+```
+
+Let's test it: component, component, component, component. Now everything works as expected! Great.
+
+Our code is using something called the state hook, which you can learn more about [here](https://reactjs.org/docs/hooks-state.html).
+
+Unfortunately, that's all I have time for! I've linked a few additional topics (such as navigation and how to apprach react projects) that I think will prove helpful if you're hoping to build a more complex app. I hope you learned something, and if you have any questions/concerns don't hesitate to ask in the Discord! I'm sure someone will be more than happy to help. Good luck and happy hacking!!
 
 ## Additional Resources
 1. [How to Install Expo](https://docs.expo.io/get-started/installation/)
-2. [Basic Component Documentation]([here](https://reactnative.dev/docs/components-and-apis))
+2. [Basic Component Documentation](https://reactnative.dev/docs/components-and-apis)
 3. [Third Party Component Documentation - Expo](https://docs.expo.io/versions/latest/)
 4. [Javascript Objects - W3 Schools](https://www.w3schools.com/js/js_objects.asp)
 5. [Project Organization](https://cheesecakelabs.com/blog/efficient-way-structure-react-native-projects/)
+6. [State Hook](https://reactjs.org/docs/hooks-state.html)
+7. [React Navigation](https://reactnavigation.org/docs/getting-started/)
+8. [Thinking in React (Class Components)](https://reactjs.org/docs/thinking-in-react.html)
+9. [Thinking in React (Functional Components)](https://dev.to/lukeshiru/thinking-in-react-the-2020-version-4c18)
