@@ -1,7 +1,8 @@
 # HOTH 8 React Native Workshop 📱
 So you want to make a mobile app, but don't want to go through the hassle of maintaining 2 separate code bases? Then you've come to the right place! React Native, a framework released by Facebook, allows you to do exactly that using Javascript. Let's get started!
 
-//TODO: link slides <br>
+[Slides](https://docs.google.com/presentation/d/1DF-JPTYbFgY0AaYZRqDyZG6WiOtRnyFPI-lp-JA3CtY/edit?usp=sharing)
+
 //TODO: link video
 
 ### Disclaimer
