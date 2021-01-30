@@ -20,7 +20,7 @@ We have another workshop available for HTML, CSS, and Javascript, so unless you'
 1. [How Do I Get the Most Out of This Workshop?](#How-Do-I-Get-the-Most-Out-of-This-Workshop)
 2. [Environment Set Up](#environment-set-up)
 3. [JSX](#JSX)
-4. [Basic & Third Party Components](#basic-&-third-party-components)
+4. [Basic & Third Party Components](#Basic-&-Third-Party-Components)
 5. [Props](#props)
 6. [Style Sheets](#style-sheets)
 7. [Custom Components](#custom-components)
