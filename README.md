@@ -43,7 +43,7 @@ If you haven't already, I would also install [VSCode](https://code.visualstudio.
 
 Now that you have your environment set up you've probably noticed a couple new files appear. Right now, we're most interested in `App.js`. If you open it up you'll see a ton of weird looking syntax including some stuff that looks oddly similar to HTML.
 
-```
+```javascript
 <View style={styles.container}>
   <Text>Open up App.js to start working on your app!</Text>
   <StatusBar style="auto" />
@@ -57,13 +57,13 @@ If you're not familiar with Javascript, the rest of `App.js` may look kind of da
 
 In Javascript, `import` allows you to use code from other files within the current file. If you're familiar with C++, it's similar to the concept of `#include` in that if you import a function, some variables/constants, or anything else, you'll be able to access them within the current file even though they're not declared. One very important import that you need to include in all files that contain React components is 
 
-```
+```javascript
 import React from 'react'
 ```
 
 Additionally, you need to import each React Native component before using them as follows: 
 
-```
+```javascript
 import { View, Text } from 'react-native';
 ```
 
@@ -75,7 +75,7 @@ As mentioned before, components are at the core of everything you do in React Na
 ### What exactly is a View?
 If you're familiar with HTML, `<View>` is essentially the analog to `<div>`. It isn't exactly the same due to some quirks related to mobile development, but it's the same idea. Think of it as a blank canvas or container to hold other components. One important thing to note about `<View>`'s is that unlike in HTML, you cannot enclose text within them without any other component. **In JSX, all text must be enclosed within a `<Text>` component, otherwise your app will have a runtime exception.** The following code will result in an exception: 
 
-```
+```javascript
 <View style={styles.container}>
   Open up App.js to start working on your app! //ERROR: Text strings must be rendered within a <Text> component
 </View>
@@ -83,7 +83,7 @@ If you're familiar with HTML, `<View>` is essentially the analog to `<div>`. It 
 
 Another important thing to realize is that just like in other languages, functions can only return one value. To demonstrate this, let's take a look at the `App()` function.
 
-```
+```javascript
 export default function App() {
   return (
     <View style={styles.container}>
@@ -96,7 +96,7 @@ export default function App() {
 
 In JSX, each component corresponds to a single "value." It may not be clear at first, but the above function actually only returns one component: a `<View/>` which contains `<Text/>` and a `<StatusBar/>`. As a result, the above function is allowed. However, the following would not be allowed: 
 
-```
+```javascript
 export default function App() {
   return (
     <Text>Open up App.js to start working on your app!</Text>    // ERROR: JSX expressions must have one parent element.
@@ -125,7 +125,7 @@ Let's get started making our first app! But what should the app do? While writin
 
 So what components should we include in our "component" counter? I'm thinking header text that features the name of the app, text that tracks the count, and a button to increment the count would be good. So let's implement it! First, I'm going to get rid of some of the default expo stuff in `App.js`. Now our file looks like this: 
 
-```
+```javascript
 import React from 'react';
 import { View, Text } from 'react-native';
 
@@ -140,7 +140,7 @@ export default function App() {
 
 Much cleaner right? Next, I'm going to add all of the components we want to include i.e. two `<Text>`'s and one `<Button>`. Making sure to add Button to the import statements (otherwise we'll get an error), now our file looks like this: 
 
-```
+```javascript
 import React from 'react';
 import { View, Text, Button } from 'react-native';
 
@@ -157,7 +157,7 @@ export default function App() {
 
 Alright, this is a great foundation! Unfortunately, when we run our app it looks pretty terrible, but we'll fix that soon! Right now I want to focus on our `<Button>` component.
 
-```
+```javascript
 <Button title="Increment"/>
 ```
 
@@ -169,7 +169,7 @@ Props essentially allow us to pass arguments to components, similarly to how you
 ### Demo
 Let's add the `onPress` prop to our button. Now our `App()` function looks like this:
 
-```
+```javascript
 export default function App() {
   const incrementCount = () => {
     //do something
@@ -197,7 +197,7 @@ The problem we're experiencing above is where style sheets come in! If you're fa
 ### Demo
 Let's not waste any time and get right back into making our app. You may have noticed earlier, but we actually already had a default style sheet provided by Expo. Let's add it back into our app. Make sure to import StyleSheet!
 
-```
+```javascript
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -211,7 +211,7 @@ If the syntax is unfamiliar to you, I recommend looking into [Javascript objects
 
 To apply our style, let's do the following:
 
-```
+```javascript
 <View style={styles.container}>
     ...
 </View>
@@ -219,7 +219,7 @@ To apply our style, let's do the following:
 
 Since our View component contains all of our components, let's call it our container. Makes sense right? Now, if we run our app, all of our components should be centered in the middle of the screen. Looks a bit better, but we're not done quite yet. Let's change up the text. First we add a couple new style objects to our style sheet. Make sure to apply them after in order to see the effects.
 
-```
+```javascript
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -249,7 +249,7 @@ You can either choose to represent a custom component as a function or as a clas
 
 Say we want to make a custom component that contains an image and some caption describing it. We could do the following (notice we use arrow function syntax, which for our purposes is interchangeable with the function syntax you might be used to):
 
-```
+```javascript
 const CaptionedImage = () => {
   return (
     <View>
@@ -262,7 +262,7 @@ const CaptionedImage = () => {
 
 This works fine, but there's a pretty glaring flaw in our component. No matter what we do, it will always have no image and the `<Text>` will always contain "There is no image yet :/". To fix this, we can pass props to our component, just like we did with prebuilt components! Let's modify the component as follows: 
 
-```
+```javascript
 const CaptionedImage = props => {
   return (
     <View>
@@ -277,7 +277,7 @@ const CaptionedImage = props => {
 
 Now we can pass two props to our component: a `uri` and a `caption` (Side note: notice how I created a style object directly within the style prop; this is allowed! It's preferred to use StyleSheet for performance reasons, but for for the sake of demonstration I'll stick with this way). Just like we can include any other component, we can render our `CaptionedImage` by doing the following: 
 
-```
+```javascript
 <CaptionedImage uri={some-image-uri} text="A caption that describes the image!"/>
 ```
 
@@ -288,7 +288,7 @@ Our app is looking a lot better, but I'm still not satisfied. Our button is just
 
 Right now, all of our code is located in a single file. Which, for a simple app, is totally fine! But could you imagine trying to write an app like Twitter (which was built in React Native by the way) in a single file? It would be completely unmanageable. Instead, let's do what I mentioned earlier and create a new file called `StyledButton.js` and import it into our `App.js`! (Note: Although I'll gloss over it for this workshop, I recommend checking out [this](https://cheesecakelabs.com/blog/efficient-way-structure-react-native-projects/) article about project organization in React Native).
 
-```
+```javascript
 import React from 'react'
 import { Text, TouchableOpacity, StyleSheet } from 'react-native'
 
@@ -322,7 +322,7 @@ I want to emphasize `export default StyledButton`. Without it, you would not be 
 
 To import `<StyledButton>` into `App.js`, we update it as follows:
 
-```
+```javascript
 import React from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 import StyledButton from './src/components/StyledButton';
@@ -352,7 +352,7 @@ Now all we need to do is make our counter actually function and we'll be good to
 ### Demo
 Let's just jump right into the demo and make it so that when we click our button, the counter text increments! Here's one attempt:
 
-```
+```javascript
 export default function App() {
   let count = 0;
 
@@ -378,7 +378,7 @@ To understand what's going on you need to know a little bit more about how react
 
 The problem comes from the fact that React Native components are only rerendered when their **state** changes. If local variables, such as `count` change, React Native won't know to update the affected component and you won't be able to see anything happen in your app. Let's fix this.
 
-```
+```javascript
 const [count, setCount] = useState(0); // state hook must be imported from react
 
 const incrementCount = () => {
