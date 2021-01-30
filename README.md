@@ -25,7 +25,7 @@ We have another workshop available for HTML, CSS, and Javascript, so unless you'
 6. [Style Sheets](#style-sheets)
 7. [Custom Components](#custom-components)
 8. [State](#state)
-9. [Thinking In React (Native)](#thinking-in-react-(native))
+9. [Wrap Up](#wrap-up)
 10. [Additional Resources](#additional-resources)
 
 ## How Do I Get the Most Out of This Workshop?
@@ -391,7 +391,9 @@ Let's test it: component, component, component, component. Now everything works 
 
 Our code is using something called the state hook, which you can learn more about [here](https://reactjs.org/docs/hooks-state.html).
 
-Unfortunately, that's all I have time for! I've linked a few additional topics (such as navigation and how to apprach react projects) that I think will prove helpful if you're hoping to build a more complex app. I hope you learned something, and if you have any questions/concerns don't hesitate to ask in the Discord! I'm sure someone will be more than happy to help. Good luck and happy hacking!!
+## Wrap Up
+
+Unfortunately, that's all I have time for! I've linked a few additional topics (such as navigation and how to approach react projects) that I think will prove helpful if you're hoping to build a more complex app. I hope you learned something, and if you have any questions/concerns don't hesitate to ask in the Discord! I'm sure someone will be more than happy to help. Good luck and happy hacking!!
 
 ## Additional Resources
 1. [How to Install Expo](https://docs.expo.io/get-started/installation/)
