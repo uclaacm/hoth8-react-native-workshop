@@ -77,7 +77,7 @@ If you're familiar with HTML, `<View>` is essentially the analog to `<div>`. It 
 
 ```
 <View style={styles.container}>
-  Open up App.js to start working on your app! //ERROR: Text strings must be rendered wihtin a <Text> component
+  Open up App.js to start working on your app! //ERROR: Text strings must be rendered within a <Text> component
 </View>
 ```
 
