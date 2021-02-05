@@ -3,7 +3,7 @@ So you want to make a mobile app, but don't want to go through the hassle of mai
 
 [Slides](https://docs.google.com/presentation/d/1DF-JPTYbFgY0AaYZRqDyZG6WiOtRnyFPI-lp-JA3CtY/edit?usp=sharing)
 
-//TODO: link video
+[Video](https://youtu.be/c8dGnJuqLY0)
 
 ### Disclaimer
 Although this workshop is intended for complete beginners, the time sensitive nature of a hackathon requires that we move at a fairly fast pace. As a result, the following (though not a prerequisite) will be extremeley helpful going into the workshop:  
